@@ -1,7 +1,6 @@
 {
     "provider-webapi": {
         "apiKey": "RGAPI-SECRETKEY",
-        "region": "europe",
         "server" : "euw1"
     },
     "rcv-pickban": {
