@@ -1,8 +1,8 @@
 {
-  "name": "config",
+  "name": "plugin-config",
   "version": "1.0.0",
   "description": "Configuration management provider",
-  "author": "Larce",
+  "author": "RCVolus",
   "license": "MIT",
   "toolkit": {
     "modes": [
