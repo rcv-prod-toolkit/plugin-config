@@ -1,15 +1,15 @@
 {
-  "name": "plugin-config",
-  "version": "1.0.0",
-  "description": "Configuration management provider",
-  "author": "RCVolus",
-  "license": "MIT",
-  "toolkit": {
-    "modes": [
-      "PLUGIN"
-    ],
-    "plugin": {
-      "main": "plugin.js"
+    "name": "plugin-config",
+    "version": "1.0.2",
+    "description": "Configuration management provider",
+    "author": "RCVolus",
+    "license": "MIT",
+    "toolkit": {
+        "modes": [
+            "PLUGIN"
+        ],
+        "plugin": {
+            "main": "plugin.js"
+        }
     }
-  }
 }
