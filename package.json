@@ -1,6 +1,6 @@
 {
     "name": "plugin-config",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Configuration management provider",
     "author": "RCVolus",
     "license": "MIT",
