@@ -18,5 +18,9 @@
     "module-league-in-game": {
         "items": [],
         "level": []
+    },
+    "auth": {
+        "enabled": false,
+        "secreteKey": ""
     }
 }
