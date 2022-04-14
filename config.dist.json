@@ -21,6 +21,7 @@
     },
     "auth": {
         "enabled": false,
-        "secreteKey": ""
+        "secreteKey": "",
+        "super-api-key": ""
     }
 }
