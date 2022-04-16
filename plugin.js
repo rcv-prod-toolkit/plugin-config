@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = (ctx) => {
-  ctx.LPTE.on('config', 'request', e => {
+  const namespace = ctx.plugin.module.getName()
+
+  ctx.LPTE.on(namespace, 'request', e => {
     ctx.LPTE.emit({
       meta: {
         type: e.meta.reply,
@@ -14,7 +16,7 @@ module.exports = (ctx) => {
     });
   });
 
-  ctx.LPTE.on('config', 'set', e => {
+  ctx.LPTE.on(namespace, 'set', e => {
     for (const key of Object.keys(e.config)) {
       config[e.meta.sender.name][key] = e.config[key]
     }
