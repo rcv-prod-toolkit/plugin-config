@@ -3,7 +3,7 @@
         "apiKey": "RGAPI-SECRETKEY",
         "server" : "euw1"
     },
-    "rcv-pickban": {
+    "module-league-champselect-ui": {
         "backend": "ws://localhost:8999"
     },
     "module-league-static": {
