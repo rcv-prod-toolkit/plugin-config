@@ -1,11 +1,11 @@
-const config = require('./config.json');
-const fs = require('fs');
-const path = require('path');
+const config = require('./config.json')
+const fs = require('fs')
+const path = require('path')
 
 module.exports = (ctx) => {
   const namespace = ctx.plugin.module.getName()
 
-  ctx.LPTE.on(namespace, 'request', e => {
+  ctx.LPTE.on(namespace, 'request', (e) => {
     ctx.LPTE.emit({
       meta: {
         type: e.meta.reply,
@@ -13,19 +13,23 @@ module.exports = (ctx) => {
         version: 1
       },
       config: config[e.meta.sender.name]
-    });
-  });
+    })
+  })
 
-  ctx.LPTE.on(namespace, 'set', e => {
+  ctx.LPTE.on(namespace, 'set', (e) => {
     for (const key of Object.keys(e.config)) {
       config[e.meta.sender.name][key] = e.config[key]
     }
 
-    fs.writeFile(path.join(__dirname, './config.json'), JSON.stringify(config, null, 2), function (err) {
-      if (err) return ctx.log.error(err);
-      ctx.log.info('config for ' + e.meta.sender.name + ' saved!');
-    });
-  });
+    fs.writeFile(
+      path.join(__dirname, './config.json'),
+      JSON.stringify(config, null, 2),
+      function (err) {
+        if (err) return ctx.log.error(err)
+        ctx.log.info('config for ' + e.meta.sender.name + ' saved!')
+      }
+    )
+  })
 
   // Emit event that we're ready to operate
   ctx.LPTE.emit({
@@ -35,5 +39,5 @@ module.exports = (ctx) => {
       version: 1
     },
     status: 'RUNNING'
-  });
-};
+  })
+}
