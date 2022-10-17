@@ -17,7 +17,9 @@
     },
     "module-league-in-game": {
         "items": [],
-        "level": []
+        "level": [],
+        "events": [],
+        "killfeed": false
     },
     "auth": {
         "enabled": false,
