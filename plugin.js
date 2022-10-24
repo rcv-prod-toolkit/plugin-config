@@ -17,8 +17,12 @@ module.exports = (ctx) => {
   })
 
   ctx.LPTE.on(namespace, 'set', (e) => {
-    for (const key of Object.keys(e.config)) {
-      config[e.meta.sender.name][key] = e.config[key]
+    if (config[e.meta.sender.name] === undefined) {
+      config[e.meta.sender.name] = e.config
+    } else {
+      for (const key of Object.keys(e.config)) {
+        config[e.meta.sender.name][key] = e.config[key]
+      }
     }
 
     fs.writeFile(
