@@ -32,6 +32,6 @@
         "broadcastLogin": "",
         "token": "",
         "automation": false,
-        "length": "240"
+        "length": 240
     }
 }
