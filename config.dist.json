@@ -25,5 +25,13 @@
         "enabled": false,
         "secreteKey": "",
         "super-api-key": ""
+    },
+    "module-twitch": {
+        "appId": "",
+        "broadcastId": "",
+        "broadcastLogin": "",
+        "token": "",
+        "automation": false,
+        "length": "240"
     }
 }
