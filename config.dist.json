@@ -9,6 +9,9 @@
     "module-league-static": {
         "last-downloaded-version": ""
     },
+    "module-league-state": {
+        "recordChampselect": true
+    },
     "plugin-database": {
         "user": "root",
         "password": "12345",
@@ -19,7 +22,8 @@
         "items": [],
         "level": [],
         "events": [],
-        "killfeed": false
+        "killfeed": false,
+        "showNicknames": false
     },
     "auth": {
         "enabled": false,
