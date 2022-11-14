@@ -1,8 +1,12 @@
-const config = require('./config.json')
-const fs = require('fs')
-const path = require('path')
+const { readFileSync } = require('fs')
+const { writeFile } = require('fs/promises')
+const { join } = require('path')
 
 module.exports = (ctx) => {
+  const configLocation = process.env.CONFIG || join(__dirname, 'config.json')
+  const rawConfig = readFileSync(configLocation)
+  const config = JSON.parse(rawConfig)
+
   const namespace = ctx.plugin.module.getName()
 
   ctx.LPTE.on(namespace, 'request', (e) => {
@@ -16,7 +20,7 @@ module.exports = (ctx) => {
     })
   })
 
-  ctx.LPTE.on(namespace, 'set', (e) => {
+  ctx.LPTE.on(namespace, 'set', async (e) => {
     if (config[e.meta.sender.name] === undefined) {
       config[e.meta.sender.name] = e.config
     } else {
@@ -25,14 +29,15 @@ module.exports = (ctx) => {
       }
     }
 
-    fs.writeFile(
-      path.join(__dirname, './config.json'),
-      JSON.stringify(config, null, 2),
-      function (err) {
-        if (err) return ctx.log.error(err)
-        ctx.log.info('config for ' + e.meta.sender.name + ' saved!')
-      }
-    )
+    try {
+      await writeFile(
+        join(__dirname, './config.json'),
+        JSON.stringify(config, null, 2)
+      )
+      ctx.log.info('config for ' + e.meta.sender.name + ' saved!')
+    } catch (error) {
+      ctx.log.error('config for ' + e.meta.sender.name + ` could not be saved! ${error}`)
+    }
   })
 
   // Emit event that we're ready to operate
