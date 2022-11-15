@@ -36,7 +36,9 @@ module.exports = (ctx) => {
       )
       ctx.log.info('config for ' + e.meta.sender.name + ' saved!')
     } catch (error) {
-      ctx.log.error('config for ' + e.meta.sender.name + ` could not be saved! ${error}`)
+      ctx.log.error(
+        'config for ' + e.meta.sender.name + ` could not be saved! ${error}`
+      )
     }
   })
 
