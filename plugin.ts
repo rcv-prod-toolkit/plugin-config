@@ -4,7 +4,8 @@ import { writeFile } from 'fs/promises'
 import { join } from 'path'
 
 module.exports = (ctx: PluginContext) => {
-  const configLocation = process.env.CONFIG || join(__dirname, '..', 'config.json')
+  const configLocation =
+    process.env.CONFIG || join(__dirname, '..', 'config.json')
   const rawConfig = readFileSync(configLocation)
   const config = JSON.parse(rawConfig.toString())
 
