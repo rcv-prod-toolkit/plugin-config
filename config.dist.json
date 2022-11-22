@@ -1,41 +1,45 @@
 {
-    "plugin-webapi": {
-        "apiKey": "RGAPI-SECRETKEY",
-        "server" : "euw1"
-    },
-    "module-league-champselect-ui": {
-        "backend": "ws://localhost:8999"
-    },
-    "module-league-static": {
-        "last-downloaded-version": ""
-    },
-    "module-league-state": {
-        "recordChampselect": true
-    },
-    "plugin-database": {
-        "user": "root",
-        "password": "12345",
-        "clusterUrl": "localhost",
-        "port": 27017
-    },
-    "module-league-in-game": {
-        "items": [],
-        "level": [],
-        "events": [],
-        "killfeed": false,
-        "showNicknames": false
-    },
-    "auth": {
-        "enabled": false,
-        "secreteKey": "",
-        "super-api-key": ""
-    },
-    "module-twitch": {
-        "appId": "",
-        "broadcastId": "",
-        "broadcastLogin": "",
-        "token": "",
-        "automation": false,
-        "length": 240
-    }
+  "plugin-webapi": {
+    "apiKey": "RGAPI-SECRETKEY",
+    "server" : "euw1"
+  },
+  "module-league-champselect-ui": {
+    "backend": "ws://localhost:8999"
+  },
+  "module-league-static": {
+    "last-downloaded-version": ""
+  },
+  "module-league-state": {
+    "recordChampselect": true
+  },
+  "plugin-database": {
+    "user": "root",
+    "password": "12345",
+    "clusterUrl": "localhost",
+    "port": 27017
+  },
+  "module-league-in-game": {
+    "items": [],
+    "level": [],
+    "events": [],
+    "killfeed": false,
+    "showNicknames": false
+  },
+  "auth": {
+    "enabled": false,
+    "secreteKey": "",
+    "super-api-key": ""
+  },
+  "module-twitch": {
+    "appId": "",
+    "broadcastId": "",
+    "broadcastLogin": "",
+    "token": "",
+    "automation": false,
+    "length": 240
+  },
+  "module-vmix": {
+    "ip": "127.0.0.1",
+    "port": 8088
+  }
 }

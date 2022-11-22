@@ -1,15 +1,23 @@
 {
-    "name": "plugin-config",
-    "version": "2.0.0",
-    "description": "Configuration management provider",
-    "author": "RCVolus",
-    "license": "MIT",
-    "toolkit": {
-        "modes": [
-            "PLUGIN"
-        ],
-        "plugin": {
-            "main": "plugin.js"
-        }
-    }
+  "name": "plugin-config",
+  "version": "2.0.0",
+  "description": "Configuration management provider",
+  "author": "RCVolus",
+  "license": "MIT",
+  "toolkit": {
+    "modes": [
+      "PLUGIN"
+    ],
+    "plugin": {
+      "main": "dist/plugin.js"
+    },
+    "needsBuild": true
+  },
+  "devDependencies": {
+    "@rcv-prod-toolkit/types": "github:rcv-prod-toolkit/types",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
 }
