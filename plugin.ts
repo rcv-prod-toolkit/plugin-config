@@ -32,10 +32,7 @@ module.exports = (ctx: PluginContext) => {
     }
 
     try {
-      await writeFile(
-        configLocation,
-        JSON.stringify(config, null, 2)
-      )
+      await writeFile(configLocation, JSON.stringify(config, null, 2))
       ctx.log.info('config for ' + e.meta.sender!.name + ' saved!')
     } catch (error) {
       ctx.log.error(
